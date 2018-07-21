@@ -1,0 +1,13 @@
+//X：自上到下编号1,2,3...（由小到大），Y，Z。
+//由X移到Z，一次移动一个，任何时候不能将较大的圆盘压在较小的圆盘上面
+
+//将x上编号为1~n的圆盘 移到z，y为辅助
+//move(x,n, z)：将编号为n的圆盘从x移到z
+void Hanoi(int n, char x, char y, char z){
+	if (n == 1) move(x,1,z);
+	else{
+		Hanoi(n-1, x, z, y);
+		move(x, n, z);
+		Hanoi(n-1, y, x, z);
+	}	
+}
